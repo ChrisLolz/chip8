@@ -1,0 +1,5 @@
+.vscode
+/build
+CMakePresets.json
+vcpkg.json
+vcpkg-configuration.json
