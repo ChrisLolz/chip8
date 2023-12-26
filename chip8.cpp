@@ -184,7 +184,7 @@ void chip8::cycle() {
             pc = (opcode & 0x0FFF) + V[0];
             break;
         case 0xC000: // 0xCXNN: Sets VX to the result of a bitwise and operation on a random number and NN
-            V[(opcode & 0x0F00)] = rand() & (opcode & 0x00FF);
+            V[(opcode & 0x0F00) >> 8] = (rand() % 256) & (opcode & 0x00FF);
             pc += 2;
             break;
         case 0xD000: {// 0xDXYN: Draws a sprite at coordinate (VX, VY) that has a width of 8 pixels and a height of N pixels
