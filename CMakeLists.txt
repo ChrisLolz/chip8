@@ -1,14 +1,11 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.15)
 project(chip8 VERSION 0.1.0 LANGUAGES C CXX)
-
-include(CTest)
-enable_testing()
 
 find_package(SDL2 CONFIG REQUIRED)
 find_package(SDL2_mixer CONFIG REQUIRED)
 
 add_executable(chip8 
-    display.cpp 
+    display.cpp
     chip8.cpp)
 
 target_link_libraries(chip8
